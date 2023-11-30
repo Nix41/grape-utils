@@ -4,7 +4,9 @@ module Grape
   module Utils
     module Templates
       # Adds a GET method to show details of an instance eof the resource
-      class Show < Base
+      class Show < ::Grape::API
+        helpers Grape::Utils::Helpers
+
         mounted do
           route_param :id, type: String do
             desc "Details of a #{configuration[:model].class_name}"

@@ -4,7 +4,9 @@ module Grape
   module Utils
     module Templates
       # Adds DELETE method to delete an instance of the resource
-      class Delete < Base
+      class Delete < ::Grape::API
+        helpers Grape::Utils::Helpers
+
         mounted do
           route_param :id, type: String do
             desc "Deletes an instances of #{configuration[:model].class_name}"

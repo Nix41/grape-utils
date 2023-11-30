@@ -4,8 +4,9 @@ module Grape
   module Utils
     module Templates
       # Adds a GET method to index all the scope of the resource
-      class Index < Base
+      class Index < ::Grape::API
         include Grape::Kaminari
+        helpers Grape::Utils::Helpers
 
         mounted do
           desc "Lists all #{configuration[:model].class_name}"

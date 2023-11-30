@@ -4,7 +4,9 @@ module Grape
   module Utils
     module Templates
       # Adds a PATCH method to update an instance of the resource
-      class Update < Base
+      class Update < ::Grape::API
+        helpers Grape::Utils::Helpers
+
         mounted do
           route_param :id, type: String do
             desc "Updates a #{configuration[:model].class_name}"

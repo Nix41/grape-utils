@@ -4,7 +4,7 @@ module Grape
   module Utils
     module Templates
       # Adds all requests necessary to CRUD the resource
-      class Crud < Base
+      class Crud < ::Grape::API
         mounted do
           mount Templates::Index, with: { index: configuration[:index], entity: configuration[:entity] }
 

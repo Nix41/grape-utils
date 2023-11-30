@@ -4,7 +4,9 @@ module Grape
   module Utils
     module Templates
       # Adds POST method to create a new instance of the resource
-      class Create < Base
+      class Create < ::Grape::API
+        helpers Grape::Utils::Helpers
+
         mounted do
           desc "Creates an instance of #{configuration[:model].class_name}"
           params do
