@@ -2,8 +2,8 @@
 
 require "grape"
 require "grape_entity"
-require "grape/utils"
-require "grape/utils/templates/create"
+require "grape_utils"
+# require "grape_utils/templates/create"
 require "rack/test"
 
 RSpec.configure do |config|

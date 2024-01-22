@@ -1,11 +1,13 @@
 # frozen_string_literal: true
 
+require "grape-kaminari"
+
 module Grape
   module Utils
     module Templates
       # Adds a GET method to index all the scope of the resource
       class Index < ::Grape::API
-        include Grape::Kaminari
+        include ::Grape::Kaminari
         helpers Grape::Utils::Helpers
 
         mounted do
@@ -16,7 +18,7 @@ module Grape
           get do
             list = configuration[:index]
 
-            present paginate(list), with: configuration[:entity]
+            present list, with: configuration[:entity]
           end
         end
       end
