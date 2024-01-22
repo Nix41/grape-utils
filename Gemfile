@@ -18,8 +18,3 @@ gem "grape-entity"
 
 # API Pagination
 gem "grape-kaminari"
-
-# Swagger
-gem "grape-swagger"
-gem "grape-swagger-entity"
-gem "grape-swagger-rails"
