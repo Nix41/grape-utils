@@ -11,7 +11,7 @@ module Grape
         helpers Grape::Utils::Helpers
 
         mounted do
-          desc "Lists all #{configuration[:model].class_name}"
+          desc "Lists all #{configuration[:model].name}"
           params do
             use :pagination, per_page: 10, max_per_page: 30
           end

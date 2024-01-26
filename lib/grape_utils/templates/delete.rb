@@ -9,7 +9,7 @@ module Grape
 
         mounted do
           route_param :id, type: String do
-            desc "Deletes an instances of #{configuration[:model].class_name}"
+            desc "Deletes an instances of #{configuration[:model].name}"
             delete do
               resource = configuration[:model].find_by!((configuration[:column_id] || :id) => params[:id])
               resource.destroy!

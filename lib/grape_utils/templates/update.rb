@@ -9,7 +9,7 @@ module Grape
 
         mounted do
           route_param :id, type: String do
-            desc "Updates a #{configuration[:model].class_name}"
+            desc "Updates a #{configuration[:model].name}"
             params do
               requires :none, using: configuration[:entity].documentation
             end

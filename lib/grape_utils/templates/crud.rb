@@ -6,7 +6,9 @@ module Grape
       # Adds all requests necessary to CRUD the resource
       class Crud < ::Grape::API
         mounted do
-          mount Templates::Index, with: { index: configuration[:index], entity: configuration[:entity] }
+          mount Templates::Index, with: {  model: configuration[:model],
+                                           index: configuration[:index],
+                                           entity: configuration[:entity] }
 
           mount Templates::Create, with: { model: configuration[:model],
                                            entity: configuration[:entity],

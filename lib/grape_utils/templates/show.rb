@@ -9,7 +9,7 @@ module Grape
 
         mounted do
           route_param :id, type: String do
-            desc "Details of a #{configuration[:model].class_name}"
+            desc "Details of a #{configuration[:model].name}"
             get do
               resource = configuration[:model].find_by!((configuration[:column_id] || :id) => params[:id])
               present resource, with: configuration[:entity]

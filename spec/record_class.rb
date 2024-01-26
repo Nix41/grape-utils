@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class RecordClass
-  def class_name
+  def name
     "RecordClass"
   end
 

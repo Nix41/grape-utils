@@ -8,7 +8,7 @@ module Grape
         helpers Grape::Utils::Helpers
 
         mounted do
-          desc "Creates an instance of #{configuration[:model].class_name}"
+          desc "Creates an instance of #{configuration[:model].name}"
           params do
             requires :none, except: configuration[:required_params],
                             using: configuration[:entity].documentation
