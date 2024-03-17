@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    grape-utils (0.1.0)
+    grape-utils (0.1.1)
       grape
       grape-entity
       grape-kaminari
