@@ -11,6 +11,10 @@ module Grape
         initial_scope = scope.is_a?(Proc) ? instance_eval(&scope) : scope
         initial_scope || model.all
       end
+
+      def default_params(configuration)
+        configuration.is_a?(Proc) ? instance_eval(&configuration) : configuration || {}
+      end
     end
   end
 end

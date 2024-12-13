@@ -14,7 +14,8 @@ module Grape
                             using: configuration[:entity].documentation
           end
           post do
-            default_params = configuration[:default_params] || {}
+            default_params = default_params(configuration[:default_params])
+            puts "default_params: #{default_params}, #{default_params.merge(permitted_params)}"
             resource = configuration[:model].create!(default_params.merge(permitted_params))
             present resource, with: configuration[:entity]
           end
