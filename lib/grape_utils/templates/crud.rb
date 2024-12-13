@@ -13,7 +13,8 @@ module Grape
           mount Templates::Create, with: { model: configuration[:model],
                                            scope: configuration[:scope],
                                            entity: configuration[:entity],
-                                           required_params: configuration[:required_params] }
+                                           required_params: configuration[:required_params],
+                                           default_params: configuration[:default_params] }
 
           mount Templates::Show, with: { model: configuration[:model],
                                          scope: configuration[:scope],
