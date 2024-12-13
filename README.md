@@ -48,7 +48,7 @@ module AwesomeAPI
     class Foo < Base
 
       resource :foos do
-        mount Grape::Utils::Templates::Index, with: { model: Foo, index: Foo.all, entity: Entities::Foo }
+        mount Grape::Utils::Templates::Index, with: { model: Foo, scope: Foo.all, entity: Entities::Foo }
         mount Grape::Utils::Templates::Show, with: { model: Foo, entity: Entities::Foo }
         mount Grape::Utils::Templates::Create, with: { model: Foo, entity: Entities::Foo}
         mount Grape::Utils::Templates::Update, with: { model: Foo.all, entity: Entities::Foo }

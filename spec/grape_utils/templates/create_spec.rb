@@ -28,8 +28,8 @@ RSpec.describe Grape::Utils::Templates::Create, type: :request do
       end
 
       it "mounts a post endpoint" do
-        post "/v1/cool/", params
-        expect(last_response.body).to eq([params].to_json)
+        response = post "/v1/cool/", params
+        expect(response.body).to eq([params].to_json)
       end
     end
   end

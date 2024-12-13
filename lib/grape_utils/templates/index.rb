@@ -16,7 +16,7 @@ module Grape
             use :pagination, per_page: 10, max_per_page: 30
           end
           get do
-            list = configuration[:index]
+            list = calculate_scope(scope: configuration[:scope], model: configuration[:model])
 
             present list, with: configuration[:entity]
           end

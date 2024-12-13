@@ -7,6 +7,7 @@ gemspec
 
 gem "rake", "~> 13.0"
 
+gem "airborne"
 gem "rack-test"
 gem "rspec", "~> 3.0"
 
