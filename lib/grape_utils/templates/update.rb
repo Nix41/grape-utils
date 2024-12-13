@@ -14,7 +14,7 @@ module Grape
               requires :none, using: configuration[:entity].documentation
             end
             patch do
-              scope = configuration[:scope] || configuration[:model]
+              scope = calculate_scope(scope: configuration[:scope], model: configuration[:model])
               resource = scope.find_by!((configuration[:column_id] || :id) => params[:id])
               resource.update!(permitted_params.except(:id))
 
